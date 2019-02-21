@@ -1,0 +1,3 @@
+gregwar_image:
+  throw_exception: false
+  web_dir: '%kernel.project_dir%/public'

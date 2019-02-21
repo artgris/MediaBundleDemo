@@ -1,0 +1,6 @@
+.required:after {
+    content: '*';
+    font-size: 14px;
+    vertical-align: top;
+    color: red;
+}

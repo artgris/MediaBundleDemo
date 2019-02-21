@@ -1,0 +1,13 @@
+artgris_file_manager:
+    web_dir: public
+    conf:
+        default:
+            dir: "../public/uploads/"
+            type: image
+        private:
+            dir: "../private"
+            type: image
+        private_doc:
+            dir: "../private"
+            regex: '.(pdf|doc)$'
+            accept: '.pdf,.doc'

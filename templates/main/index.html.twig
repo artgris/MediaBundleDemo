@@ -1,0 +1,67 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}MediaBundle{% endblock %}
+
+{% block body %}
+    <section class="jumbotron text-center">
+        <div class="container">
+            <h1 class="jumbotron-heading">MediaBundle</h1>
+            <p class="lead text-muted">A demo application to showcase MediaBundle features</p>
+            <p>
+                <a href="https://github.com/artgris/MediaBundle" target="_blank" class="btn btn-primary my-2"><i class="fab fa-github"></i> Github</a>
+            </p>
+        </div>
+    </section>
+    {{ form_start(form) }}
+    {{ form_widget(form) }}
+    <button class="btn btn-primary" type="submit">Enregistrer</button>
+    {{ form_end(form) }}
+
+    <hr>
+    {% include 'main/_flash_messages.html.twig' %}
+
+    {% if tests|length > 0 %}
+        <table class="table" id="data">
+            <thead>
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Image</th>
+                <th scope="col">Private Image</th>
+                <th scope="col">Private Doc</th>
+                <th scope="col">Gallery</th>
+                <th scope="col">Action</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for test in tests %}
+                <tr>
+                    <td scope="row">{{ test.id }}</td>
+                    <td>{% if test.image %}
+                            <img height="50" src="{{ gImage(test.image).zoomCrop(100, 100) }}" alt="">
+                        {% endif %}
+                    </td>
+                    <td>
+                        {% if test.private %}
+                            <img height="50" src="{{ test.private }}" alt="">
+                        {% endif %}
+                    </td>
+                    <td>{% if test.privateDoc %}
+                            <a class="badge badge-primary" href="{{ test.privateDoc }}"><i class="fa fa-download"></i> Télécharger</a>
+                        {% endif %}
+                    </td>
+                    <td>
+                        {% for gal in test.gallery %}
+                            <img height="50" src="{{ gImage(gal).zoomCrop(100, 100) }}" alt="">
+                        {% endfor %}
+                    </td>
+                    <td> {{ include('main/_delete_form.html.twig', {test: test}, with_context = false) }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+
+    {% else %}
+        <div class="p-3 mb-2 bg-warning text-dark">Pas de donnée pour le moment</div>
+    {% endif %}
+
+{% endblock %}

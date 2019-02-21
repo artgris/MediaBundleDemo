@@ -1,0 +1,2 @@
+artgris_media:
+    resource: "@ArtgrisMediaBundle/Resources/config/routing.yml"
