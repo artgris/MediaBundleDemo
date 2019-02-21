@@ -18,3 +18,5 @@
 ###< symfony/web-server-bundle ###
 
 public/cache
+
+.idea
