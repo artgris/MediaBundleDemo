@@ -11,3 +11,5 @@ artgris_file_manager:
             dir: "../private"
             regex: '.(pdf|doc)$'
             accept: '.pdf,.doc'
+        perso:
+            service: "custom_service"

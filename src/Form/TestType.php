@@ -15,15 +15,16 @@ class TestType extends AbstractType
     {
         $builder
             ->add('image', MediaType::class, [
-                'conf' => 'default',
+                'conf' => 'perso',
                 'help' => "Image public",
                 'required' => true,
-                'crop_options' => [
-                    'display_crop_data' => false,
-                    'allow_flip' => false,
-                    'allow_rotation' => true,
-                    'ratio' => 1.3
-                ],
+//                'allow_crop' => false,
+//                'crop_options' => [
+//                    'display_crop_data' => false,
+//                    'allow_flip' => false,
+//                    'allow_rotation' => true,
+//                    'ratio' => 1.3
+//                ],
             ])
             ->add('private', MediaType::class, [
                 'conf' => 'private',

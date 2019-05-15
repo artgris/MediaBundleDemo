@@ -48,7 +48,8 @@
     "autoload-dev": {
         "psr-4": {
             "App\\Tests\\": "tests/",
-            "Artgris\\Bundle\\MediaBundle\\": "bundles/MediaBundle"
+            "Artgris\\Bundle\\MediaBundle\\": "bundles/MediaBundle",
+            "Artgris\\Bundle\\FileManagerBundle\\": "bundles/FileManagerBundle"
         }
     },
     "replace": {
