@@ -14,7 +14,7 @@
     </section>
     {{ form_start(form) }}
     {{ form_widget(form) }}
-    <button class="btn btn-primary" type="submit">Save</button>
+    <button class="btn btn-primary" type="submit"> <i class="fa fa-save"></i> Save</button>
     {{ form_end(form) }}
 
     <hr>
@@ -46,7 +46,7 @@
                         {% endif %}
                     </td>
                     <td>{% if test.privateDoc %}
-                            <a class="badge badge-primary" href="{{ test.privateDoc }}"><i class="fa fa-download"></i> Télécharger</a>
+                            <a class="badge badge-primary" href="{{ test.privateDoc }}"><i class="fa fa-download"></i> Download</a>
                         {% endif %}
                     </td>
                     <td>
@@ -61,7 +61,7 @@
         </table>
 
     {% else %}
-        <div class="p-3 mb-2 bg-warning text-dark">Pas de donnée pour le moment</div>
+        <div class="p-3 mb-2 bg-warning text-dark">There is no data available at the moment.</div>
     {% endif %}
 
 {% endblock %}
