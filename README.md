@@ -19,4 +19,4 @@ Screenshot
 
 ![Screenshot of the MediaBundle Demo app](doc/media.png)
  
-[1]: https://github.com/artgris/MediaBundleDemo
+[1]: https://github.com/artgris/MediaBundle
