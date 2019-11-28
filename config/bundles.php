@@ -14,6 +14,5 @@ return [
     Symfony\Bundle\MakerBundle\MakerBundle::class => ['dev' => true],
     Symfony\Bundle\WebServerBundle\WebServerBundle::class => ['dev' => true],
     Artgris\Bundle\MediaBundle\ArtgrisMediaBundle::class => ['all' => true],
-    Artgris\Bundle\FileManagerBundle\ArtgrisFileManagerBundle::class => ['all' => true],
     Gregwar\ImageBundle\GregwarImageBundle::class => ['all' => true],
 ];
