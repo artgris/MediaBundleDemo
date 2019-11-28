@@ -1,7 +1,7 @@
 MediaBundle Demo
 ================
 
-A demo application to showcase the main features of [MediaBundle][1],
+A demo application to showcase the main features of [MediaBundle][1]
 
 How to install this project
 ---------------------------
