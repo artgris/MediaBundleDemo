@@ -3,8 +3,6 @@ ArtgrisMedia Demo
 
 A demo application to showcase the main features of [MediaBundle][1],
 
-<img src="https://raw.githubusercontent.com/artgris/MediaBundleDemo/master/doc/media.png" alt="MediaBundleDemo" align="center" />
-
 How to install this project
 ---------------------------
      
