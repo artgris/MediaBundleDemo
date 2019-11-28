@@ -1,17 +1,24 @@
-**Installation**
-     
-    git clone git@github.com:artgris/MediaBundleDemo.git media
-    cd media/
-    composer install
-    php bin/console assets:install --symlink
-    
-    
-create a '.env.local' file with your database access:
-    
-    DATABASE_URL=mysql://root:root@127.0.0.1:3306/media
-    
-run doctrine commands:
+ArtgrisMedia Demo
+==============
 
-    php bin/console d:d:c --if-not-exists
-    php bin/console d:s:u --force
+A demo application to showcase the main features of [MediaBundle][1],
+
+<img src="https://raw.githubusercontent.com/artgris/MediaBundleDemo/master/doc/media.png" alt="MediaBundleDemo" align="center" />
+
+How to install this project
+---------------------------
+     
+  1. `git clone git@github.com:artgris/MediaBundleDemo.git media`
+  1. `cd media/`
+  1. `composer install`
+  1. `php bin/console assets:install --symlink`
+  1. Edit the `DATABASE_URL` env var in the `.env` file to use your database credentials.
+  1. `php bin/console d:d:c --if-not-exists` 
+  1. `php bin/console d:s:u --force` 
     
+Screenshot
+----------
+
+![Screenshot of the ArtgrisMedia Demo app](doc/media.png)
+ 
+[1]: https://github.com/artgris/MediaBundleDemo
