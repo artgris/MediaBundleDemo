@@ -44,7 +44,8 @@
     },
     "autoload": {
         "psr-4": {
-            "App\\": "src/"
+            "App\\": "src/",
+            "Artgris\\Bundle\\MediaBundle\\": "bundles/MediaBundle"
         }
     },
     "autoload-dev": {
