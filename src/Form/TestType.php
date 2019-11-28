@@ -15,10 +15,9 @@ class TestType extends AbstractType
     {
         $builder
             ->add('image', MediaType::class, [
-                'conf' => 'perso',
-                'help' => "Image public",
+                'conf' => 'default',
+                'help' => 'Images (conf: default)',
                 'required' => true,
-//                'allow_crop' => false,
 //                'crop_options' => [
 //                    'display_crop_data' => false,
 //                    'allow_flip' => false,
@@ -26,18 +25,18 @@ class TestType extends AbstractType
 //                    'ratio' => 1.3
 //                ],
             ])
+            ->add('gallery', MediaCollectionType::class, [
+                'conf' => 'perso',
+                'help' => "Images collection (conf: perso)",
+            ])
             ->add('private', MediaType::class, [
                 'conf' => 'private',
-                'help' => "Image privée"
+                'help' => 'Images (conf: private)'
             ])
             ->add('private_doc', MediaType::class, [
                 'conf' => 'private_doc',
-                'help' => "Document (pdf ou doc) privé"
-            ])
-            ->add('gallery', MediaCollectionType::class, [
-                'conf' => 'default',
-                'help' => "Gallerie d'image"
-            ]);;
+                'help' => 'Documents .pdf or .doc (conf: private_doc)'
+            ]);
     }
 
     public function configureOptions(OptionsResolver $resolver)

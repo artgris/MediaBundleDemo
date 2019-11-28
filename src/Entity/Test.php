@@ -8,7 +8,7 @@ use Artgris\Bundle\MediaBundle\Form\Validator\Constraint as MediaAssert;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
- * @ORM\Entity(repositoryClass="App\Repository\TestRepository")
+ * @ORM\Entity()
  */
 class Test
 {

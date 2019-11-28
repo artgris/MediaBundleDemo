@@ -14,7 +14,7 @@
     </section>
     {{ form_start(form) }}
     {{ form_widget(form) }}
-    <button class="btn btn-primary" type="submit">Enregistrer</button>
+    <button class="btn btn-primary" type="submit">Save</button>
     {{ form_end(form) }}
 
     <hr>
@@ -35,7 +35,7 @@
             <tbody>
             {% for test in tests %}
                 <tr>
-                    <td scope="row">{{ test.id }}</td>
+                    <td>{{ test.id }}</td>
                     <td>{% if test.image %}
                             <img height="50" src="{{ gImage(test.image).zoomCrop(100, 100) }}" alt="">
                         {% endif %}
@@ -54,7 +54,7 @@
                             <img height="50" src="{{ gImage(gal).zoomCrop(100, 100) }}" alt="">
                         {% endfor %}
                     </td>
-                    <td> {{ include('main/_delete_form.html.twig', {test: test}, with_context = false) }}</td>
+                    <td> {{ include('main/_delete_form.html.twig', {test: test}, false) }}</td>
                 </tr>
             {% endfor %}
             </tbody>

@@ -4,7 +4,7 @@ namespace App\Controller;
 
 use App\Entity\Test;
 use App\Form\TestType;
-use App\Repository\TestRepository;
+use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -15,20 +15,19 @@ class MainController extends AbstractController
     /**
      * @Route("/", name="homepage")
      */
-    public function index(Request $request, TestRepository $testRepository)
+    public function index(Request $request, EntityManagerInterface $em)
     {
 
-        $tests = $testRepository->findAll();
+        $tests = $em->getRepository(Test::class)->findAll();
 
         $test = new Test();
         $form = $this->createForm(TestType::class, $test);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $em = $this->getDoctrine()->getManager();
             $em->persist($test);
             $em->flush();
-            $this->addFlash('success', 'Enregistrement réalisé avec succès');
+            $this->addFlash('success', 'Successfully added');
             return $this->redirectToRoute('homepage',['_fragment' => 'data']);
         }
 
@@ -43,15 +42,16 @@ class MainController extends AbstractController
      *
      * @Route("/{id}/delete", methods={"POST"}, name="admin_post_delete")
      */
-    public function delete(Request $request, Test $test): Response
+    public function delete(Request $request, Test $test, EntityManagerInterface $em): Response
     {
         if (!$this->isCsrfTokenValid('delete', $request->request->get('token'))) {
             return $this->redirectToRoute('homepage',['_fragment' => 'data']);
         }
-        $em = $this->getDoctrine()->getManager();
+
         $em->remove($test);
         $em->flush();
-        $this->addFlash('success', 'Suppression réalisée avec succès');
+
+        $this->addFlash('success', 'Successfully deleted');
         return $this->redirectToRoute('homepage',['_fragment' => 'data']);
     }
 }
