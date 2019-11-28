@@ -1,5 +1,5 @@
-ArtgrisMedia Demo
-==============
+MediaBundle Demo
+================
 
 A demo application to showcase the main features of [MediaBundle][1],
 
@@ -17,6 +17,6 @@ How to install this project
 Screenshot
 ----------
 
-![Screenshot of the ArtgrisMedia Demo app](doc/media.png)
+![Screenshot of the MediaBundle Demo app](doc/media.png)
  
 [1]: https://github.com/artgris/MediaBundleDemo
