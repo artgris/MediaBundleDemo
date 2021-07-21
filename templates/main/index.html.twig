@@ -37,7 +37,7 @@
                 <tr>
                     <td>{{ test.id }}</td>
                     <td>{% if test.image %}
-                            <img height="50" src="{{ gImage(test.image).zoomCrop(100, 100) }}" alt="">
+                            <img height="50" src="{{ web_image(test.image).zoomCrop(100, 100) }}" alt="">
                         {% endif %}
                     </td>
                     <td>
@@ -51,7 +51,7 @@
                     </td>
                     <td>
                         {% for gal in test.gallery %}
-                            <img height="50" src="{{ gImage(gal).zoomCrop(100, 100) }}" alt="">
+                            <img height="50" src="{{ web_image(gal).zoomCrop(100, 100) }}" alt="">
                         {% endfor %}
                     </td>
                     <td> {{ include('main/_delete_form.html.twig', {test: test}, false) }}</td>
