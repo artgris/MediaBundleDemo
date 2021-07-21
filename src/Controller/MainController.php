@@ -20,7 +20,7 @@ class MainController extends AbstractController
 
         $tests = $em->getRepository(Test::class)->findAll();
 
-        $test = new Test();
+        $test = $tests[0];
         $form = $this->createForm(TestType::class, $test);
         $form->handleRequest($request);
 
