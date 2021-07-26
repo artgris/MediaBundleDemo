@@ -18,6 +18,7 @@ class TestType extends AbstractType
                 'conf' => 'default',
                 'help' => 'Images (conf: default)',
                 'required' => true,
+
 //                'crop_options' => [
 //                    'display_crop_data' => false,
 //                    'allow_flip' => false,
@@ -28,6 +29,8 @@ class TestType extends AbstractType
             ->add('gallery', MediaCollectionType::class, [
                 'conf' => 'perso',
                 'help' => "Images collection (conf: perso)",
+                'allow_add' => true,
+                'allow_delete' => true,
             ])
             ->add('private', MediaType::class, [
                 'conf' => 'private',
